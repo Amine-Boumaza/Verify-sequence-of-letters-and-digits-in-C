@@ -60,7 +60,6 @@ int main()
 {
     FILE *fp;
     char str[100];
-    int sum_of_letters = 0;
     int num_of_letters = 0;
     Tlist graph = NULL;
 
@@ -79,7 +78,7 @@ int main()
         for (int i = 0; i < strlen(str); i++)
         {
             // Verify the first condition
-            if (i == 0 && (str[i] < 'A' || str[i] > 'Z'))
+            if (i == 0 && (str[i] < 'a' || str[i] > 'z'))
             {
                 printf("Error: The first element of the sequence must be a letter.\n");
                 return 1;
@@ -87,13 +86,12 @@ int main()
 
             // Create a new graph node for each character
             p = addtoendlist(p, i);
-            if (str[i] >= 'A' && str[i] <= 'Z')
+            if (str[i] >= 'a' && str[i] <= 'z')
             {
-                sum_of_letters += (int)str[i];
                 num_of_letters++;
             }
             // Create a new path for each letter
-            if (str[i] >= 'A' && str[i] <= 'Z' && (i < 4 || num_of_letters % 2 != 0))
+            if (str[i] >= 'a' && str[i] <= 'z' && (i < 4 || num_of_letters % 2 != 0))
             {
                 addtoendpath(&p->d, i + 1, str[i]);
             }
@@ -110,21 +108,16 @@ int main()
         graph->d = p->d;
     }
 
-    // Print the graph for testing purposes
-    Tlist p = graph;
-    while (p != NULL)
+    // Check if the sequence follows the conditions
+    if (num_of_letters % 2 == 1 && (num_of_letters >= 4 && isdigit(str[strlen(str) - 1])))
     {
-        printf("%d: ", p->val);
-        Tpath q = p->d;
-        while (q != NULL)
-        {
-            printf("(%d, %c) ", q->val, q->c);
-            q = q->next;
-        }
-        printf("\n");
-        p = p->next;
+        printf("The sequence follows the conditions.\n");
     }
-
+    else
+    {
+        printf("The sequence does not follow the conditions.\n");
+        return 1;
+    }
     // Close the input file
     fclose(fp);
 
