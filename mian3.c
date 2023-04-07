@@ -113,11 +113,7 @@ int main()
     {
         printf("The sequence follows the conditions.\n");
     }
-    else
-    {
-        printf("The sequence does not follow the conditions.\n");
-        return 1;
-    }
+    
     // Close the input file
     fclose(fp);
 
