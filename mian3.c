@@ -108,7 +108,6 @@ int main()
         graph->d = p->d;
     }
 
-    // Check if the sequence follows the conditions
     if (num_of_letters % 2 == 1 && (num_of_letters >= 4 && isdigit(str[strlen(str) - 1])))
     {
         printf("The sequence follows the conditions.\n");
