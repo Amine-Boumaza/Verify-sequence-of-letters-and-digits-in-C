@@ -47,20 +47,20 @@ int main()
     if (num_of_letters % 2 == 1)
     {
         printf("The sequence follows condition 1.\n");
+        fclose(fp);
         return 1;
     }
 
     if (num_of_first_letters == 4 && num_of_digits == strlen(str) - 4)
     {
         printf("The sequence follows condition 2.\n");
+        fclose(fp);
         return 1;
     }
 
     printf("Error: The sequence does not follow any condition.\n");
     fclose(fp);
     return 1;
-
-    fclose(fp);
 
     return 0;
 }
