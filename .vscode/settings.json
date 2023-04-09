@@ -1,12 +1,14 @@
 {
-    "files.associations": {
-        "stdlib.h": "c",
-        "stdio.h": "c",
-        "string.h": "c"
-    },
-    "C_Cpp.errorSquiggles": "enabled",
-    "launch": {
-        "configurations": [],
-        "compounds": []
-    }
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "stdlib.h": "c",
+    "stdio.h": "c",
+    "string.h": "c",
+    "ctype.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "enabled",
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  }
 }
