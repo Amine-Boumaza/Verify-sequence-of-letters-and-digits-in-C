@@ -7,7 +7,9 @@ int main()
 {
     FILE *fp;
     char str[100];
-    int num_of_letters = 0, num_of_digits = 0, num_of_first_letters = 0;
+    int num_of_letters = 0;
+    int num_of_digits = 0;
+    int num_of_first_letters = 0;
 
     fp = fopen("input.txt", "r");
     if (fp == NULL)
